@@ -1,5 +1,5 @@
 import { Api, WEB } from 'renative';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, StackViewTransitionConfigs } from 'react-navigation';
 
 import MoviesStackNavigation from './MoviesStackNavigation';
 import SeriesStackNavigation from './SeriesStackNavigation';
@@ -15,10 +15,16 @@ export const AppNavigator = createStackNavigator(
 
     MoviesStack: {
       screen: MoviesStackNavigation,
+      navigationOptions: {
+        title: 'Detail',
+      },
     },
 
     SeriesStack: {
       screen: SeriesStackNavigation,
+      navigationOptions: {
+        title: 'Detail',
+      },
     },
 
     SearchStack: {
@@ -27,7 +33,7 @@ export const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Main',
-    headerMode: Api.platform === WEB ? 'none' : 'screen'
-
+    headerMode: Api.platform === WEB ? 'none' : 'screen',
+    transitionConfig: () => StackViewTransitionConfigs.SlideFromRightIOS
   }
 );

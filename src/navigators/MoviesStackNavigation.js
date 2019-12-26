@@ -8,7 +8,7 @@ export default createStackNavigator(
     Detail: {
       screen: DetailScreen,
       navigationOptions: {
-        header: null,
+        header: null
       },
     },
 
