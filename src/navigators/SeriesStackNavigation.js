@@ -8,13 +8,19 @@ export default createStackNavigator(
   {
     Detail: {
       screen: DetailScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
 
     PlayerVideo: {
       screen: PlayerVideoScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
   {
-    initialRouteName: 'Detail'
+    initialRouteName: 'Detail',
   }
 );

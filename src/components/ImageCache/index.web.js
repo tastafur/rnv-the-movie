@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Img from 'react-image';
+import { connect } from 'react-redux';
 
-export default class ImageCache extends Component {
-  static propTypes = {
-    source: PropTypes.object.isRequired,
-    customStyles: PropTypes.object,
-  };
+import ImageCache from './statelessWeb';
 
-  render () {
-    const { source: { uri }, customStyles } = this.props;
+// Selectors
+import { getBaseUrlImage } from '../../selectors/configuration';
 
-    return (
-      <Img
-        style={customStyles}
-        src={uri}
-      />
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  baseUrl: getBaseUrlImage(state.configuration)
+});
+
+export default connect(mapStateToProps, null)(ImageCache)

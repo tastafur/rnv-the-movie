@@ -1,3 +1,4 @@
+import { Api, WEB } from 'renative';
 import { createStackNavigator } from 'react-navigation';
 
 import MoviesStackNavigation from './MoviesStackNavigation';
@@ -26,6 +27,7 @@ export const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Main',
-    headerMode: 'none',
+    headerMode: Api.platform === WEB ? 'none' : 'screen'
+
   }
 );

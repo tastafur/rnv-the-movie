@@ -11,7 +11,7 @@ describe('Reducers', () => {
 
     it('should set MOVIES', () => {
       const { movies } = mocks;
-      const currentState = [];
+      const currentState = {};
 
       expect(moviesReducer(currentState, setMovies(movies))).toMatchSnapshot()
     })

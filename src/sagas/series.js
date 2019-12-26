@@ -11,7 +11,7 @@ import { errorHandler } from './util/errorHandler'
 
 export function* fetchSeriesProcess() {
   try {
-    const resultSeries = yield call(getSeries);
+    const resultSeries = yield call(getSeries, { params: { sort_by: 'popularity.desc', with_genres: '99,10751' } });
     if(resultSeries) {
       yield put(setSeries(resultSeries.results))
     }

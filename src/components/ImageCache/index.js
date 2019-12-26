@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import FastImage from 'react-native-fast-image';
+import { connect } from 'react-redux';
 
-export default class ImageCache extends Component {
-  static propTypes = {
-    source: PropTypes.object.isRequired,
-    customStyles: PropTypes.object,
-  };
+import ImageCache from './statelessNative';
 
-  render () {
-    const { source: { uri }, customStyles } = this.props;
+// Selectors
+import { getBaseUrlImage } from '../../selectors/configuration';
 
-    return (
-      <FastImage
-        style={customStyles}
-        source={{
-          uri,
-        }}
-        resizeMode={FastImage.resizeMode.cover}
-      />
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  baseUrl: getBaseUrlImage(state.configuration)
+});
+
+export default connect(mapStateToProps, null)(ImageCache)

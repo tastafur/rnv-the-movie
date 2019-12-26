@@ -4,6 +4,7 @@ import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers';
 
+import { configuration } from './configuration';
 import { movies } from './movies';
 import { series } from './series';
 
@@ -13,6 +14,7 @@ const navReducer = createNavigationReducer(AppNavigator);
 
 export default combineReducers({
   nav: navReducer,
+  configuration,
   movies,
   series
 })

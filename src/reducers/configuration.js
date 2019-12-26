@@ -1,16 +1,15 @@
-import { normalizeState } from '../utils/commons'
-import { SET_MOVIES } from '../actions/movies'
+import { SET_CONFIGURATION } from '../actions/configuration'
 
-export const initialMovies = {};
+export const initialConfiguration = {};
 // Here I could normalize the data so that it is easier for me to update one of the elements or delete it, for me it is a common use in other projects but I don't see it here
 // https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/
 // https://redux.js.org/recipes/structuring-reducers/updating-normalized-data
-export function movies(state = initialMovies, { type, payload }) {
+export function configuration(state = initialConfiguration, { type, payload }) {
   switch (type) {
-    case SET_MOVIES:
+    case SET_CONFIGURATION:
       return {
         ...state,
-        ...normalizeState(payload.movies)
+        ...payload.configuration
       };
     default:
       return state;

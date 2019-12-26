@@ -20,6 +20,6 @@ export default createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Search'
+    initialRouteName: 'Search',
   }
 );

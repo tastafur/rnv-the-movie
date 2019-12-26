@@ -19,7 +19,6 @@ export default
           ...headers
         },
         body: body ? JSON.stringify(body) : null,
-        credentials: 'include'
       };
 
       const urlParms = params ?

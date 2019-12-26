@@ -11,7 +11,7 @@ import { errorHandler } from './util/errorHandler'
 
 export function* fetchMoviesProcess() {
   try {
-    const resultMovies = yield call(getMovies);
+    const resultMovies = yield call(getMovies, { params: { sort_by: 'popularity.desc' } });
     if(resultMovies) {
       yield put(setMovies(resultMovies.results))
     }
