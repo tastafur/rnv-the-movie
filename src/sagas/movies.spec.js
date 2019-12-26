@@ -2,6 +2,9 @@ import { call as mockCall} from 'redux-saga-test-plan/matchers';
 import { expectSaga } from 'redux-saga-test-plan';
 import { throwError } from 'redux-saga-test-plan/providers';
 
+// Utils
+import { normalizeState } from '../utils/commons';
+
 import mocks from '../../mocks/data';
 
 // Sagas
@@ -18,14 +21,16 @@ import { getMovies } from '../services/movies';
 
 describe('Saga', () => {
   describe('fetchMoviesProcess', () => {
-    const state = [];
+    const state = {};
     it('should fetch all movies', () => {
-      const expectedFetchCallSuccess = [...mocks.movies];
+      const expectedFetchCallSuccess = {
+        results: mocks.movies
+      };
       const expectedActionMovies = setMovies(mocks.movies);
-      const expectedFinalState = [...mocks.movies];
+      const expectedFinalState = normalizeState(mocks.movies);
       return expectSaga(fetchMoviesProcess)
-        .withReducer(movies)
         .withState(state)
+        .withReducer(movies)
         .provide([
           [mockCall.fn(getMovies), expectedFetchCallSuccess],
         ])
@@ -39,10 +44,10 @@ describe('Saga', () => {
         "success": false,
         "status_code": 7
       };
-      const expectedFinalState = [];
+      const expectedFinalState = {};
       return expectSaga(fetchMoviesProcess)
-        .withReducer(movies)
         .withState(state)
+        .withReducer(movies)
         .provide([
           [mockCall.fn(getMovies), throwError(expectedFetchCallError)],
         ])
