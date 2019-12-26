@@ -2,12 +2,15 @@
     "name": "rnv-the-movie",
     "version": "0.1.0",
     "scripts": {
-        "postinstall": "jetify"
+        "postinstall": "jetify",
+        "lint": "eslint .",
+        "test": "jest"
     },
     "dependencies": {
         "@react-navigation/core": "3.4.2",
         "@react-navigation/native": "3.5.0",
         "@react-navigation/web": "1.0.0-alpha.9",
+        "cross-fetch": "^3.0.4",
         "prop-types": "^15.7.2",
         "pure-react-carousel": "^1.24.1",
         "react": "16.9.0",
@@ -15,6 +18,7 @@
         "react-dom": "16.9.0",
         "react-image": "^2.2.2",
         "react-native": "0.61.2",
+        "react-native-fast-image": "7.0.2",
         "react-native-gesture-handler": "1.4.1",
         "react-native-reanimated": "1.0.0-alpha.12",
         "react-native-snap-carousel": "3.7.5",
@@ -23,21 +27,36 @@
         "react-native-web": "0.11.4",
         "react-native-web-image-loader": "0.0.5",
         "react-navigation": "3.9.2",
-        "react-navigation-redux-helpers": "^4.0.1",
+        "react-navigation-redux-helpers": "^3.0.8",
         "react-navigation-tabs": "2.0.0-alpha.0",
         "react-redux": "^7.1.3",
         "redux": "^4.0.4",
         "redux-saga": "^1.1.3",
-        "renative": "0.28.11",
-        "react-native-fast-image": "7.0.2"
+        "renative": "0.28.11"
     },
     "devDependencies": {
-        "rnv": "0.28.11",
-        "renative-template-hello-world": "0.28.11",
+        "@redux-saga/testing-utils": "^1.1.3",
+        "babel-jest": "^24.9.0",
+        "editorconfig": "^0.15.3",
+        "eslint": "^6.8.0",
+        "eslint-plugin-jest": "^23.1.1",
+        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react-native": "^3.8.1",
+        "husky": "^3.1.0",
+        "jest": "^24.9.0",
+        "redux-saga-test-plan": "^4.0.0-rc.3",
         "renative-template-blank": "0.28.11",
+        "renative-template-hello-world": "0.28.11",
+        "rnv": "0.28.11",
         "xcode": "2.0.0"
     },
     "optionalDependencies": {
         "ios-deploy": "1.10.0-beta.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run lint && npm run test"
+        }
     }
 }

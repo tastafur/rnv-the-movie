@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FastImage from 'react-native-fast-image';
 
-import styles from './styles';
-
 export default class ImageCache extends Component {
   static propTypes = {
     source: PropTypes.object.isRequired,
-    customStyle: PropTypes.object,
+    customStyles: PropTypes.object,
   };
 
   render () {

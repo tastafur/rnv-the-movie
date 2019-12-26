@@ -1,8 +1,5 @@
 import React from "react";
 
-// Within your render function, assuming you have a file called
-// "background.mp4" in your project. You can include multiple videos
-// on a single screen if you like.
 const styles = {
   video: {
     height: 200,
@@ -10,12 +7,15 @@ const styles = {
   },
 };
 
-export default () =>
+const bugBunny = require('./big_buck_bunny.mp4');
+
+export const VideoPlayer = () =>
   (<video
      ref={(ref) => {
        this.player = ref
      }}
+     autoPlay
      style={styles.video}
   >
-    <source src="file://big_buck_bunny.mp4" type="video/mp4" />
+    <source src={bugBunny} type="video/mp4" />
   </video>);

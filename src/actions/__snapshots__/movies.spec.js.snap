@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions Movies setCountries should create MOVIES action 1`] = `
+Object {
+  "payload": Object {
+    "movies": Array [
+      Object {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": Array [
+          99,
+          10402,
+        ],
+        "id": 164558,
+        "original_language": "en",
+        "original_title": "One Direction: This Is Us",
+        "overview": "Go behind the scenes during One Directions sell out \\"Take Me Home\\" tour and experience life on the road.",
+        "popularity": 1.166982,
+        "poster_path": null,
+        "release_date": "2013-08-30",
+        "title": "One Direction: This Is Us",
+        "video": false,
+        "vote_average": 8.45,
+        "vote_count": 55,
+      },
+      Object {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": Array [
+          80,
+          18,
+        ],
+        "id": 654,
+        "original_language": "en",
+        "original_title": "On the Waterfront",
+        "overview": "",
+        "popularity": 1.07031,
+        "poster_path": null,
+        "release_date": "1954-06-22",
+        "title": "On the Waterfront",
+        "video": false,
+        "vote_average": 8.19,
+        "vote_count": 51,
+      },
+      Object {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": Array [
+          28,
+          18,
+          12,
+          10752,
+        ],
+        "id": 10911,
+        "original_language": "en",
+        "original_title": "The Guns of Navarone",
+        "overview": "A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers.",
+        "popularity": 1.075583,
+        "poster_path": null,
+        "release_date": "1961-04-27",
+        "title": "The Guns of Navarone",
+        "video": false,
+        "vote_average": 7.56,
+        "vote_count": 50,
+      },
+    ],
+  },
+  "type": "SET_MOVIES",
+}
+`;

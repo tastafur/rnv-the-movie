@@ -1,0 +1,42 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest/globals": true,
+    "es6": true,
+    "amd": true,
+    "node": true
+  },
+  "globals": {
+    "global": true,
+    "expect": false,
+    "before": true,
+    "after": true,
+    "__DEV__": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.9.0"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "jest/expect-expect": 0
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-native",
+    "jest"
+  ]
+}
