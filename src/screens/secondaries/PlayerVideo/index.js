@@ -1,16 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { VideoPlayer } from '../../../components/VideoPlayer';
+import PropTypes from 'prop-types';
+import { withNavigation } from 'react-navigation';
+import VideoPlayer from '../../../components/VideoPlayer';
 
-export default class PlayerVideo extends React.Component {
-  render() {
-    return (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-        <Text>
-          {'Player video'}
-        </Text>
-        <VideoPlayer />
-      </View>
-    );
-  }
+const PlayerVideo = ({navigation}) => (
+  <VideoPlayer navigation={navigation} />
+);
+
+PlayerVideo.propTypes = {
+  navigation: PropTypes.object
 }
+
+export default withNavigation(PlayerVideo)

@@ -17,7 +17,10 @@ export const AppNavigator = createStackNavigator(
     },
 
     PlayerVideo: {
-      screen: PlayerVideoScreen
+      screen: PlayerVideoScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
 
     Search: {
