@@ -22,11 +22,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  openDetailsMovies: () => dispatch(NavigationActions.navigate({
-    routeName: 'MoviesStack'
-  })),
-  openDetailsSeries: () => dispatch(NavigationActions.navigate({
-    routeName: 'SeriesStack'
+  openDetailsEntertainment: id => dispatch(NavigationActions.navigate({
+    routeName: 'Detail',
+    params: {
+      id
+    }
   })),
   fetchConfiguration: () => dispatch(fetchConfiguration())
 });

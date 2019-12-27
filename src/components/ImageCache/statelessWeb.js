@@ -10,15 +10,18 @@ export default class ImageCache extends Component {
     customStyles: PropTypes.object,
     baseUrl: PropTypes.string,
     size: PropTypes.any,
+    otherUrl: PropTypes.string,
+    imageApi: PropTypes.bool
   };
 
   render () {
-    const { source: { path }, customStyles, baseUrl, size } = this.props;
+    const { source, customStyles, baseUrl, size, imageApi = true, otherUrl } = this.props;
+    const uri = imageApi ? `${baseUrl}${size}${source.path}?api_key=${config.token}` : otherUrl;
 
     return (
       <Img
         style={customStyles}
-        src={`${baseUrl}${size}${path}?api_key=${config.token}`}
+        src={(imageApi ? uri : otherUrl)}
       />
     );
   }

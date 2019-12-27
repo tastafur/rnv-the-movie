@@ -7,7 +7,7 @@ const styles = {
   },
 };
 
-const bugBunny = require('./big_buck_bunny.mp4');
+const bugBunny = require('../../assets/big_buck_bunny.mp4');
 
 export const VideoPlayer = () =>
   (<video

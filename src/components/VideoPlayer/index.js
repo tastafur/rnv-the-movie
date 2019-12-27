@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const bugBunny = require('./big_buck_bunny.mp4');
+const bugBunny = require('../../assets/big_buck_bunny.mp4');
 
 export const VideoPlayer = () =>
     <Video source={bugBunny}   // Can be a URL or a local file.

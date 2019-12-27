@@ -1,17 +1,22 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 
-export default class Detail extends React.Component {
-  static navigationOptions = {
-    title: 'Detail',
-  };
-  render() {
-    return (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-        <Text>
-          {'Detail screen'}
-        </Text>
-      </View>
-    );
-  }
-}
+import Detail from './stateless';
+
+// Selectors
+import { getSize } from '../../../selectors/configuration';
+
+
+const mapStateToProps = (state) => ({
+  size: getSize(state.configuration),
+  movies: state.movies,
+  series: state.series,
+});
+
+const mapDispatchToProps = dispatch => ({
+  openVideo: () => dispatch(NavigationActions.navigate({
+    routeName: 'PlayerVideo'
+  })),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail)

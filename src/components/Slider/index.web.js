@@ -12,16 +12,16 @@ export default class Slider extends React.Component {
     size: PropTypes.any
   }
 
-  renderItem = ({ path, onPress, size, i }) => {
+  renderItem = ({ path, onPress, size, i, id }) => {
     return (
       <Slide
         style={{ width: Number(size.split('w')[1]), height: 'auto' }}
         key={i}
         index={i}
-        onClick={onPress}
+        onClick={() => onPress(id)}
       >
         <ImageCache
-          customStyle={{ width: Number(size.split('w')[1]), height: 'auto' }}
+          customStyles={{ width: Number(size.split('w')[1]), height: 'auto' }}
           size={size}
           source={{ path }}
         />

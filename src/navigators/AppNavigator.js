@@ -1,11 +1,10 @@
 import { Api, WEB } from 'renative';
-import { createStackNavigator, StackViewTransitionConfigs } from 'react-navigation';
+import { createStackNavigator,  StackViewTransitionConfigs } from 'react-navigation';
 
-import MoviesStackNavigation from './MoviesStackNavigation';
-import SeriesStackNavigation from './SeriesStackNavigation';
-import SearchStackNavigation from './SearchStackNavigation';
-
-import MainScreen from '../screens/Main'
+import MainScreen from '../screens/Main';
+import DetailScreen from '../screens/secondaries/Detail';
+import PlayerVideoScreen from '../screens/secondaries/PlayerVideo';
+import SearchScreen from '../screens/Search';
 
 export const AppNavigator = createStackNavigator(
   {
@@ -13,22 +12,16 @@ export const AppNavigator = createStackNavigator(
       screen: MainScreen,
     },
 
-    MoviesStack: {
-      screen: MoviesStackNavigation,
-      navigationOptions: {
-        title: 'Detail',
-      },
+    Detail: {
+      screen: DetailScreen,
     },
 
-    SeriesStack: {
-      screen: SeriesStackNavigation,
-      navigationOptions: {
-        title: 'Detail',
-      },
+    PlayerVideo: {
+      screen: PlayerVideoScreen
     },
 
-    SearchStack: {
-      screen: SearchStackNavigation,
+    Search: {
+      screen: SearchScreen,
     },
   },
   {
