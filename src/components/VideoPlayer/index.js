@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import VideoPlayerNative from 'react-native-video-controls';
-import PropTypes from "prop-types";
 
 const bugBunny = require('../../assets/big_buck_bunny.mp4');
 

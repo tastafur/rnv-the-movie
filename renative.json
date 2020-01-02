@@ -41,7 +41,11 @@
         "react-native-reanimated": "source:rnv",
         "react-native-snap-carousel": "source:rnv",
         "react-native-vector-icons": "source:rnv",
-        "react-native-video": "source:rnv"
+        "react-native-video": "source:rnv",
+        "react-native-safe-area-view": "source:rnv",
+        "react-native-safe-area-context": "source:rnv",
+        "react-native-platform-touchable": "source:rnv",
+        "react-native-iphone-x-helper": "source:rnv"
     },
     "permissions": {
         "ios": {},
