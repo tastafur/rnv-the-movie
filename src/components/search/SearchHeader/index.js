@@ -20,7 +20,7 @@ class SearchHeader extends React.PureComponent {
   static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
 
   static propTypes = {
-    backButton: PropTypes.string,
+    backButton: PropTypes.bool,
     backButtonTitle: PropTypes.string,
     cancelButtonText: PropTypes.string,
     tintColor: PropTypes.string,

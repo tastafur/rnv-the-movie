@@ -57,7 +57,7 @@ class SearchBar extends React.PureComponent {
               style={{ padding: 5 }}
               background={Touchable.Ripple(this.props.tintColor, true)}>
               <Image
-                style={{ width: 25, height: 25}}
+                style={{ width: 15, height: 15}}
                 source={require('../../../assets/close.png')}
               />
             </Touchable>
