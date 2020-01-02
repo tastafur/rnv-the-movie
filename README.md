@@ -10,6 +10,10 @@ I have tried to memorize selectors without using hooks and I have not seen that 
 
 Node 8+ is required for this project.
 
+#### Renative Bugs
+
+I found three errors related to this library, in version 0.28 you cannot install add-ons using the command line interface, React Native Debugger does not connect the network tool and the library React native Gesture handle the buttons of the event on click not work
+
 ### Installation
 
 Install dependencies.
