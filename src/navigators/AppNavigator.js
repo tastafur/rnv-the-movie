@@ -1,4 +1,3 @@
-import React from 'react';
 import { Api, WEB } from 'renative';
 import { createStackNavigator,  StackViewTransitionConfigs } from 'react-navigation';
 

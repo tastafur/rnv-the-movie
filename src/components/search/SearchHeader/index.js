@@ -1,7 +1,8 @@
 import React from 'react';
-import { Animated, Dimensions, Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Animated, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
 import { isIphoneX } from 'react-native-iphone-x-helper'
+import PropTypes from "prop-types";
 
 // @todo: make this work properly when in landscape
 const hasNotch = isIphoneX();
@@ -17,6 +18,20 @@ const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? (hasNotch ? 40 : 25) : StatusBa
 
 class SearchHeader extends React.PureComponent {
   static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
+
+  static propTypes = {
+    backButton: PropTypes.string,
+    backButtonTitle: PropTypes.string,
+    cancelButtonText: PropTypes.string,
+    tintColor: PropTypes.string,
+    backButtonTruncatedTitle: PropTypes.string,
+    backButtonTitleStyle: PropTypes.object,
+    backgroundColor: PropTypes.string,
+    navigation: PropTypes.shape({
+      goBack: PropTypes.func
+    }),
+    children: PropTypes.object
+  }
 
   _navigateBack = () => {
     this.props.navigation.goBack(null);

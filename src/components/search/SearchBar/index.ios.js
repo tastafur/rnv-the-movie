@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Dimensions,
   LayoutAnimation,
@@ -27,6 +28,19 @@ const SearchIcon = () => (
 );
 
 class SearchBar extends React.PureComponent {
+  static propTypes = {
+    textColor: PropTypes.string,
+    placeholderTextColor: PropTypes.string,
+    cancelButtonText: PropTypes.string,
+    tintColor: PropTypes.string,
+    onChangeQuery: PropTypes.func,
+    onSubmit: PropTypes.func,
+    onCancelPress: PropTypes.func,
+    navigation: PropTypes.shape({
+      goBack: PropTypes.func
+    }),
+  }
+
   state = {
     text: '',
     showCancelButton: false,

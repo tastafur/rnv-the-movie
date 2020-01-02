@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Platform, StyleSheet, View } from 'react-native';
 import SearchBar from '../SearchBar';
 import SearchHeader from '../SearchHeader';
@@ -12,6 +13,23 @@ const styles = StyleSheet.create({
 });
 
 export default class SearchLayout extends React.Component {
+  static propTypes = {
+    headerBackgroundColor: PropTypes.string,
+    headerTintColor: PropTypes.string,
+    searchInputPlaceholderTextColor: PropTypes.string,
+    searchInputTextColor: PropTypes.string,
+    searchInputSelectionColor: PropTypes.string,
+    searchInputUnderlineColorAndroid: PropTypes.string,
+    searchInputTintColor: PropTypes.string,
+    renderResults: PropTypes.object,
+    onChangeQuery: PropTypes.func,
+    onSubmit: PropTypes.func,
+    navigation: PropTypes.shape({
+      goBack: PropTypes.func
+    }),
+    children: PropTypes.object
+  }
+
   static defaultProps = {
     debounce: 500,
     headerBackgroundColor: '#fff',

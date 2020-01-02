@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
 
 import { RectButton } from 'react-native-gesture-handler';
@@ -6,6 +7,12 @@ import { RectButton } from 'react-native-gesture-handler';
 import SearchLayout from '../../components/search/SearchLayout';
 
 export default class Search extends React.Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func
+    })
+  }
+
   static navigationOptions = {
     header: null,
   };

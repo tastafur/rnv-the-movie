@@ -1,9 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, TextInput, View, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Touchable from 'react-native-platform-touchable';
 
 class SearchBar extends React.PureComponent {
+  static propTypes = {
+    textColor: PropTypes.string,
+    placeholderTextColor: PropTypes.string,
+    selectionColor: PropTypes.string,
+    underlineColorAndroid: PropTypes.string,
+    tintColor: PropTypes.string,
+    onChangeQuery: PropTypes.func,
+    onSubmit: PropTypes.func
+  }
+
   componentDidMount() {
     requestAnimationFrame(() => {
       this._textInput.focus();
