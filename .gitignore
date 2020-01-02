@@ -63,3 +63,7 @@ metro.config.local.js
 
 #now
 now.json
+
+# IntelliJ
+
+.idea

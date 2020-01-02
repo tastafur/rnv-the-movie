@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Slider from '../../components/Slider';
 import SearchButton from '../../components/search/SearchButton';
-
 export default class Main extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Discover',
