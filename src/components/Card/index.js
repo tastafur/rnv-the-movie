@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ImageCache from '../ImageCache';
 import styles from './styles';
 
-export default class SliderEntry extends Component {
+export default class Card extends Component {
 
   static propTypes = {
     data: PropTypes.object.isRequired,

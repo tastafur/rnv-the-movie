@@ -1,5 +1,5 @@
 export const getEntertainmentContent = (entertainment, id) => {
-  return(entertainment.movies[id] || entertainment.series[id] || null);
+  return(entertainment.movies[id] || entertainment.series[id] || entertainment.entertainmentSearch[id] || null);
 };
 
 export const getFieldsMainEntertainment = item => ({

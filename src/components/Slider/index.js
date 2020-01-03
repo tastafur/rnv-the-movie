@@ -2,8 +2,8 @@ import React from 'react';
 import Carousel from 'react-native-snap-carousel';
 import PropTypes from 'prop-types';
 
-import SliderEntry from '../SliderEntry';
-import { itemWidth, sliderWidth } from '../SliderEntry/styles';
+import Card from '../Card';
+import { itemWidth, sliderWidth } from '../Card/styles';
 import styles from './styles';
 
 
@@ -15,7 +15,7 @@ export default class Slider extends React.Component {
     size: PropTypes.any
   }
   renderItem = ({item, index}) =>
-    <SliderEntry size={this.props.size} onPress={this.props.onPress} data={item} even={(index + 1) % 2 === 0} />;
+    <Card size={this.props.size} onPress={this.props.onPress} data={item} even={(index + 1) % 2 === 0} />;
 
 
   render() {

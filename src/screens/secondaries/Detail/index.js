@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   size: getSize(state.configuration),
   movies: state.movies,
   series: state.series,
+  entertainmentSearch: state.entertainments
 });
 
 const mapDispatchToProps = dispatch => ({

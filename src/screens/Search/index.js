@@ -1,58 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
-import { RectButton } from 'react-native-gesture-handler';
+import { NavigationActions } from 'react-navigation';
 
-import SearchLayout from '../../components/search/SearchLayout';
+import Search from './stateless'
 
-export default class Search extends React.Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func
-    })
-  }
+// Utils
+import { unNormalizeState } from '../../utils/commons'
 
-  static navigationOptions = {
-    header: null,
-  };
+// Actions
+import { fetchSearch } from "../../actions/search";
 
-  state = {
-    searchText: null,
-  };
+// Selectors
+import { getEntertainmentCover, filterForEntertainment } from '../../selectors/search';
+import { getSize } from '../../selectors/configuration';
 
-  _handleQueryChange = searchText => {
-    this.setState({ searchText });
-  };
+const mapStateToProps = (state) => ({
+  entertainments: getEntertainmentCover(filterForEntertainment(unNormalizeState(state.entertainments))),
+  size: getSize(state.configuration)
+});
 
-  _executeSearch = () => {
-    alert('do search!');
-  };
+const mapDispatchToProps = dispatch => ({
+  openDetailsEntertainment: id => dispatch(NavigationActions.navigate({
+    routeName: 'Detail',
+    params: {
+      id
+    }
+  })),
+  fetchSearch: (query) => dispatch(fetchSearch(query))
+});
 
-  render() {
-    let { searchText } = this.state;
-
-    return (
-      <SearchLayout
-        onChangeQuery={this._handleQueryChange}
-        onSubmit={this._executeSearch}>
-        {searchText ? (
-          <RectButton
-            style={{
-              borderBottomWidth: StyleSheet.hairlineWidth,
-              borderBottomColor: '#eee',
-              paddingVertical: 20,
-              paddingHorizontal: 15,
-            }}
-            onPress={() =>
-              this.props.navigation.navigate('Result', {
-                text: this.state.searchText,
-              })
-            }>
-            <Text style={{ fontSize: 14 }}>{searchText}!</Text>
-          </RectButton>
-        ) : null}
-      </SearchLayout>
-    );
-  }
-}
+export default connect(mapStateToProps, mapDispatchToProps)(Search)

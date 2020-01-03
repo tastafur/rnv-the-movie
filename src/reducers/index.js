@@ -7,6 +7,7 @@ import {
 import { configuration } from './configuration';
 import { movies } from './movies';
 import { series } from './series';
+import { entertainments } from './search';
 
 import { AppNavigator } from '../navigators/AppNavigator';
 
@@ -16,5 +17,6 @@ export default combineReducers({
   nav: navReducer,
   configuration,
   movies,
-  series
+  series,
+  entertainments
 })

@@ -8,8 +8,11 @@ const DEFAULT_TINT_COLOR = Platform.OS === 'ios' ? '#007AFF' : '#000';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
+  containerList: {
+    alignItems: 'center'
+  }
 });
 
 export default class SearchLayout extends React.Component {
@@ -72,10 +75,11 @@ export default class SearchLayout extends React.Component {
             }
           />
         </SearchHeader>
-
-        {this.props.renderResults
-          ? this.props.renderResults(this.state.q)
-          : this.props.children}
+        <View style={styles.containerList}>
+        {
+          this.props.children
+        }
+        </View>
       </View>
     );
   }

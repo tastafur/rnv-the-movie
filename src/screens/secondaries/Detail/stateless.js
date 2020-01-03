@@ -22,26 +22,31 @@ export default class Detail extends React.Component {
     entertainmentContent: PropTypes.object,
     movies: PropTypes.object,
     series: PropTypes.object,
+    entertainmentSearch: PropTypes.object,
     openVideo: PropTypes.func
   };
 
   render() {
-    const { navigation: { state: { params: { id } } }, size, movies, series, openVideo } = this.props;
-    const { path, title, subtitle } = getFieldsMainEntertainment(getEntertainmentContent({ movies, series }, id));
+    const { navigation, size, movies, series, entertainmentSearch, openVideo } = this.props;
+    const id = navigation.getParam('id', null);
+    if(id) {
+      const { path, title, subtitle } = getFieldsMainEntertainment(getEntertainmentContent({ movies, series, entertainmentSearch }, id));
 
-    return (
-      <View style={styles.container}>
-        <ImageCache
-          customStyles={styles.background}
-          size={size}
-          source={{ path }}
-        />
-        <View style={styles.card}>
-          <PlayVideo onPress={openVideo} />
-          <Text style={styles.title}>{title || ''}</Text>
-          <Text style={styles.subtitle} numberOfLines={4} ellipsizeMode={'tail'}>{subtitle || ''}</Text>
+      return (
+        <View style={styles.container}>
+          <ImageCache
+            customStyles={styles.background}
+            size={size}
+            source={{ path }}
+          />
+          <View style={styles.card}>
+            <PlayVideo onPress={openVideo} />
+            <Text style={styles.title}>{title || ''}</Text>
+            <Text style={styles.subtitle} numberOfLines={4} ellipsizeMode={'tail'}>{subtitle || ''}</Text>
+          </View>
         </View>
-      </View>
-    );
+      );
+    }
+    return null
   }
 }
