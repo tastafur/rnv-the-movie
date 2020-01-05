@@ -2,9 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
+import styles from './styles';
+
+// Components
 import Slider from '../../components/Slider';
 import SearchButton from '../../components/search/SearchButton';
-export default class Main extends React.Component {
+
+export default class Movies extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Discover',
     headerRight: (
@@ -21,7 +25,7 @@ export default class Main extends React.Component {
   };
 
   componentDidMount() {
-    const { fetchConfiguration } = this.props
+    const { fetchConfiguration } = this.props;
     fetchConfiguration();
   }
 
@@ -29,7 +33,7 @@ export default class Main extends React.Component {
     const { movies, series, openDetailsEntertainment, size } = this.props;
 
     return (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <View style={styles.container}>
         { size &&
           <>
             <Slider data={movies} size={size} onPress={openDetailsEntertainment} />

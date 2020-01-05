@@ -6,8 +6,6 @@ import Card from '../Card';
 import { itemWidth, sliderWidth } from '../Card/styles';
 import styles from './styles';
 
-
-
 export default class Slider extends React.Component {
   static propTypes = {
     onPress: PropTypes.func,
@@ -29,8 +27,8 @@ export default class Slider extends React.Component {
         inactiveSlideOpacity={1}
         enableMomentum={true}
         activeSlideAlignment={'start'}
-        containerCustomStyle={styles.slider}
-        contentContainerCustomStyle={styles.sliderContentContainer}
+        containerCustomStyle={styles.nativeContainer}
+        contentContainerCustomStyle={styles.nativeContentContainer}
         activeAnimationType={'spring'}
         activeAnimationOptions={{
           friction: 4,

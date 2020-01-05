@@ -2,23 +2,23 @@ import { Api, WEB } from 'renative';
 import { createStackNavigator,  StackViewTransitionConfigs } from 'react-navigation';
 
 // Screens
-import MainScreen from '../screens/Main';
+import MoviesScreen from '../screens/Movies';
 import DetailScreen from '../screens/secondaries/Detail';
-import PlayerVideoScreen from '../screens/secondaries/PlayerVideo';
+import PlayMovie from '../screens/secondaries/PlayMovie';
 import SearchScreen from '../screens/Search';
 
 export const AppNavigator = createStackNavigator(
   {
-    Main: {
-      screen: MainScreen,
+    Movies: {
+      screen: MoviesScreen,
     },
 
     Detail: {
       screen: DetailScreen,
     },
 
-    PlayerVideo: {
-      screen: PlayerVideoScreen,
+    PlayMovie: {
+      screen: PlayMovie,
       navigationOptions: {
         header: null,
       },
@@ -33,7 +33,7 @@ export const AppNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'Movies',
     headerMode: Api.platform === WEB ? 'none' : 'screen',
     transitionConfig: () => StackViewTransitionConfigs.SlideFromRightIOS
   }

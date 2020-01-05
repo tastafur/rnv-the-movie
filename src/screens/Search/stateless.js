@@ -25,30 +25,30 @@ export default class Search extends React.Component {
     searchText: null,
   };
 
-  _handleQueryChange = searchText => {
+  handleQueryChange = searchText => {
     if(searchText)
       this.props.fetchSearch(searchText);
 
     this.setState({ searchText });
   };
 
-  _executeSearch = () => {
+  executeSearch = () => {
     const { searchText } = this.state;
     if(searchText)
       this.props.fetchSearch(searchText)
   };
 
   render() {
-    const { entertainments } = this.props
+    const { entertainments, size, openDetailsEntertainment } = this.props
 
     return (
       <SearchLayout
-        onChangeQuery={this._handleQueryChange}
-        onSubmit={this._executeSearch}>
+        onChangeQuery={this.handleQueryChange}
+        onSubmit={this.executeSearch}>
         {entertainments.length > 0 ? (
           <FlatList
             data={entertainments}
-            renderItem={({ item, index }) => <Card key={String(index)} size={this.props.size} onPress={this.props.openDetailsEntertainment} data={item} even={(index + 1) % 2 === 0} />}
+            renderItem={({ item, index }) => <Card key={index} size={size} onPress={openDetailsEntertainment} data={item} even={(index + 1) % 2 === 0} />}
             keyExtractor={ (item, index) => index.toString() }
           />) : null}
       </SearchLayout>

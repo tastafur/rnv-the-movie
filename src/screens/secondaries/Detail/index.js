@@ -16,7 +16,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   openVideo: () => dispatch(NavigationActions.navigate({
-    routeName: 'PlayerVideo'
+    routeName: 'PlayMovie'
   })),
 })
 

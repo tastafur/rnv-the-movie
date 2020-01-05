@@ -29,6 +29,8 @@ class SearchBar extends React.PureComponent {
     let searchInputStyle = {};
     if (this.props.textColor) {
       searchInputStyle.color = this.props.textColor;
+    } else {
+      console.log('Hola me llamo pepe')
     }
 
     return (

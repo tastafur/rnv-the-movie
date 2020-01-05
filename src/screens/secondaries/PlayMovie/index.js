@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import VideoPlayer from '../../../components/VideoPlayer';
 
-const PlayerVideo = ({navigation}) => (
+const PlayMovie = ({navigation}) => (
   <VideoPlayer navigation={navigation} />
 );
 
-PlayerVideo.propTypes = {
+PlayMovie.propTypes = {
   navigation: PropTypes.object
 }
 
-export default withNavigation(PlayerVideo)
+export default withNavigation(PlayMovie)

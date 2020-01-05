@@ -1,13 +1,5 @@
-import React from "react";
-
-const styles = {
-  video: {
-    height: 200,
-    width: '100%'
-  },
-};
-
-const bugBunny = require('../../assets/big_buck_bunny.mp4');
+import React from 'react';
+import styles from './styles';
 
 export const VideoPlayer = () =>
   (<video
@@ -17,5 +9,5 @@ export const VideoPlayer = () =>
      autoPlay
      style={styles.video}
   >
-    <source src={bugBunny} type="video/mp4" />
+    <source src={require('../../assets/big_buck_bunny.mp4')} type="video/mp4" />
   </video>);

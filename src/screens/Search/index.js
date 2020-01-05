@@ -5,10 +5,10 @@ import { NavigationActions } from 'react-navigation';
 import Search from './stateless'
 
 // Utils
-import { unNormalizeState } from '../../utils/commons'
+import { unNormalizeState } from '../../utils/commons';
 
 // Actions
-import { fetchSearch } from "../../actions/search";
+import { fetchSearch } from '../../actions/search';
 
 // Selectors
 import { getEntertainmentCover, filterForEntertainment } from '../../selectors/search';

@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 
 import { NavigationActions } from 'react-navigation';
 
-import Main from './stateless'
+import Movies from './stateless';
 
 // Utils
-import { unNormalizeState } from '../../utils/commons'
+import { unNormalizeState } from '../../utils/commons';
 
 // Actions
 import { fetchConfiguration } from '../../actions/configuration';
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
   fetchConfiguration: () => dispatch(fetchConfiguration())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(mapStateToProps, mapDispatchToProps)(Movies)
