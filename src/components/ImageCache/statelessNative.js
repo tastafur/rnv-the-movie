@@ -20,7 +20,7 @@ export default class ImageCache extends Component {
     const sourceInternal = imageApi ? {
       uri,
       headers: { Authorization: `Bearer ${config.token}` },
-      priority: FastImage.priority.low
+      priority: FastImage.priority.high
     } : otherUrl;
     return (
       <FastImage

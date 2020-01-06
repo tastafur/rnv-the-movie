@@ -17,7 +17,7 @@ export default class Detail extends React.Component {
   render() {
     return (
       <TouchableOpacity
-        activeOpacity={1}
+        activeOpacity={0.6}
         style={styles.button}
         onPress={this.props.onPress}
       >
